@@ -127,4 +127,3 @@ test_list = ['测试 北京 3年 专科',
 
 for test in test_list:
     print(test, "预测薪资为：", predict_by_label(test, model), "K")
-"""
