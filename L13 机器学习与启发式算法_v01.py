@@ -37,11 +37,11 @@ plt.rcParams['font.sans-serif'] = ['SimHei']
 # 用来正常显示负号
 plt.rcParams['axes.unicode_minus'] = False
 
-# 以10个随机选取的工作岗位为例
-sample_nodes = random.sample(position_names, k=10)
+# 以23个随机选取的工作岗位为例
+sample_nodes = random.sample(position_names, k=23)
 sample_nodes
 
-# 初始化节点（随机的30个职位）
+# 初始化节点（随机的23个职位）
 sample_nodes_connections = sample_nodes
 # 给随机的2个职位，添加相关的技能
 for p, skills in skill_position_graph.items():
@@ -52,13 +52,13 @@ for p, skills in skill_position_graph.items():
 sample_graph = G.subgraph(sample_nodes_connections)
 plt.figure(figsize=(50, 30))
 pos = nx.spring_layout(sample_graph, k=1)
-nx.draw(sample_graph, pos, with_labels=True, node_size=30, font_size=10)
+nx.draw(sample_graph, pos, with_labels=True, node_size=23 font_size=10)
 plt.show()
 
 # PageRank算法对核心能力和核心职位进行影响力的排序
 pr = nx.pagerank(G, alpha=0.9)
 ranked_position_and_ability = sorted([(name, value) for name, value in pr.items()], key=lambda x:x[1], reverse=True)
-ranked_position_and_ability[:5]
+ranked_position_and_ability[:8]
 
 # 特征X 需要去掉salary字段
 X_content = content.drop(['salary'], axis=1)
