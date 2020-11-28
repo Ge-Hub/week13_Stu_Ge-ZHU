@@ -52,7 +52,7 @@ for p, skills in skill_position_graph.items():
 sample_graph = G.subgraph(sample_nodes_connections)
 plt.figure(figsize=(50, 30))
 pos = nx.spring_layout(sample_graph, k=1)
-nx.draw(sample_graph, pos, with_labels=True, node_size=23 font_size=10)
+nx.draw(sample_graph, pos, with_labels=True, node_size=30 font_size=10)
 plt.show()
 
 # PageRank算法对核心能力和核心职位进行影响力的排序
